@@ -31,7 +31,7 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
+		String fileName = "C:/Users/IBM_ADMIN/Desktop/Selenium/SeleniumProject/Testing.xlsx";
 
 		List<List<Object>> retVal = ApachePOIExcelRead.getExcelContent(fileName);
 		System.out.println("size " + retVal.size());

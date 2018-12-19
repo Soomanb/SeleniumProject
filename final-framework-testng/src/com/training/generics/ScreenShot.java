@@ -29,7 +29,7 @@ public class ScreenShot {
 	
 	public void captureScreenShot(){
 		
-		String path = "C:\\Users\\Naveen\\Desktop\\screenshots\\";
+		String path = "C:\\Users\\IBM_ADMIN\\Desktop\\Selenium\\SeleniumProject\\screenshots\\";
 		String fileName ="";
 
 		GregorianCalendar calendar = new GregorianCalendar(); 
@@ -65,7 +65,7 @@ public class ScreenShot {
 
 	public void captureScreenShot(String fileName){
 		
-		String path =  "C:\\Users\\Naveen\\Desktop\\screenshots\\";
+		String path =  "C:\\Users\\IBM_ADMIN\\Desktop\\Selenium\\SeleniumProject\\screenshots\\";
 	
 		// 1. create file 
 		// 2. capture screenshot from selenium 
