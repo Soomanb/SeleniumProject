@@ -21,11 +21,11 @@ private WebDriver driver;
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/a")
 	private WebElement Sales;
 	
-	public void clickReports(String userName) {
+	public void clickReports() {
 		this.Reports.click();
 	}
 	
-	public void clickSales(String password) {
+	public void clickSales() {
 		this.Sales.click(); 
 	}
 	
