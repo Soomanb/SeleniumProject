@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35044" started-at="2018-12-19T12:04:42Z" finished-at="2018-12-19T12:05:17Z">
+  <suite name="Default suite" duration-ms="35404" started-at="2018-12-20T12:02:33Z" finished-at="2018-12-20T12:03:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35044" started-at="2018-12-19T12:04:42Z" finished-at="2018-12-19T12:05:17Z">
-      <class name="com.training.sanity.tests.RTTC021_deleteCustomer">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC021_deleteCustomer@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="72" started-at="2018-12-19T12:04:42Z" finished-at="2018-12-19T12:04:42Z">
+    <test name="Default test" duration-ms="35404" started-at="2018-12-20T12:02:33Z" finished-at="2018-12-20T12:03:08Z">
+      <class name="com.training.sanity.tests.RTTC025_Returns">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC025_Returns@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="34" started-at="2018-12-20T12:02:33Z" finished-at="2018-12-20T12:02:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC021_deleteCustomer@47c62251]" name="setUp" is-config="true" duration-ms="21049" started-at="2018-12-19T12:04:42Z" finished-at="2018-12-19T12:05:03Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC025_Returns@47c62251]" name="setUp" is-config="true" duration-ms="20296" started-at="2018-12-20T12:02:33Z" finished-at="2018-12-20T12:02:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="CustomerDelete()[pri:0, instance:com.training.sanity.tests.RTTC021_deleteCustomer@47c62251]" name="CustomerDelete" duration-ms="10207" started-at="2018-12-19T12:05:03Z" finished-at="2018-12-19T12:05:13Z">
+        <test-method status="PASS" signature="TotalReturns()[pri:0, instance:com.training.sanity.tests.RTTC025_Returns@47c62251]" name="TotalReturns" duration-ms="11274" started-at="2018-12-20T12:02:53Z" finished-at="2018-12-20T12:03:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CustomerDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC021_deleteCustomer@47c62251]" name="tearDown" is-config="true" duration-ms="3664" started-at="2018-12-19T12:05:13Z" finished-at="2018-12-19T12:05:17Z">
+        </test-method> <!-- TotalReturns -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC025_Returns@47c62251]" name="tearDown" is-config="true" duration-ms="3755" started-at="2018-12-20T12:03:05Z" finished-at="2018-12-20T12:03:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.RTTC021_deleteCustomer -->
+      </class> <!-- com.training.sanity.tests.RTTC025_Returns -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
