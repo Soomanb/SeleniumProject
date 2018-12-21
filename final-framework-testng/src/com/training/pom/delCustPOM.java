@@ -18,22 +18,27 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	// locate Customer icon
 	@FindBy(xpath="//*[@id=\"menu-customer\"]/a/i")
 	private WebElement Customericon; 
 	
+	// locate Customers link after clicking customer icon
 	@FindBy(xpath="//*[@id=\"menu-customer\"]/ul/li[1]/a")
 	private WebElement Customerslink;
 	
+	// locate checkbox of customer
 	@FindBy(xpath="//*[@id=\"form-customer\"]/div/table/tbody/tr[4]/td[1]/input")
 	private WebElement chkbox; 
 	
+	// locate red coloured Delete button on top-right of the screen
 	@FindBy(xpath="//*[@id=\"content\"]/div[1]/div/div/button/i")
 	private WebElement dltbtn; 
 	
+	// locate the message displayed after deleting customer
 	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div[1]")
 	private WebElement successmsg; 
 	
-	
+	// locate the table containing all customer details
 	@FindBy(xpath="//*[@id=\"form-customer\"]/div")
 	private WebElement custTable;
 	
@@ -46,8 +51,9 @@ private WebDriver driver;
 		this.Customerslink.click(); 
 		}
 	
+	// identifying rows of Customers table
 	public void clickChkBox() {
-		List<WebElement> allNames = this.custTable.findElements(By.tagName("tr"));  // identifying rows of Customers table.
+		List<WebElement> allNames = this.custTable.findElements(By.tagName("tr"));  
 		System.out.println(allNames.get(2).getText());
 		WebElement namedel = allNames.get(2);
 		namedel.findElement(By.name("selected[]")).click();

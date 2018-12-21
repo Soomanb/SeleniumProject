@@ -22,29 +22,37 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	// locate Reports icon
 	@FindBy(xpath="//*[@id=\"menu-report\"]/a/i")
 	private WebElement Reports; 
 	
+	// locate Sales link
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/a")
 	private WebElement Sales;
 	
+	// locate Orders link
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/ul/li[1]/a")
 	private WebElement Orderslink; 
 	
+	// // locate Tax link
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/ul/li[2]/a")
 	private WebElement Taxlink; 
 	
+	// locate Shipping link
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/ul/li[3]/a")
 	private WebElement Shippinglink; 
 	
+	// // locate Returns link
 	@FindBy(xpath="//*[@id=\"menu-report\"]/ul/li[1]/ul/li[4]/a")
 	private WebElement Returnslink; 
 	
+	// locate filter button
 	@FindBy(id="button-filter")
 	private WebElement filterbtn; 
 
+	// locate webtable and xpath for webtable forOrders, Tax, Shipping and Returns is same.
 	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div/div[2]/div[2]")
-	private WebElement table;                              // xpath for webtable forOrders, Tax, Shipping and Returns is same.
+	private WebElement table;                              
 	
 	public void clickReports() {
 		this.Reports.click();
@@ -70,6 +78,7 @@ public void clickReturnslink() {
 	this.Returnslink.click();
 }
 
+// identify GroupBy combo box and select from it.
 public void selectfromGroupbylist() {
 	Select groupbyweek = new Select(driver.findElement(By.id("input-group")));
 	groupbyweek.selectByVisibleText("Weeks");
