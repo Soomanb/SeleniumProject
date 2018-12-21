@@ -40,12 +40,14 @@ public class RTTC021_deleteCustomer
 	
 	@BeforeMethod
 	  public void setUp() throws Exception {
+		         // launch browser and open admin URL
 			driver = DriverFactory.getDriver(DriverNames.CHROME);
 			loginPOM = new LoginPOM(driver); 
 			DelCusPOM = new delCustPOM(driver);
 			screenShot = new ScreenShot(driver);
 			baseUrl = properties.getProperty("baseURL");
-			// open the browser 
+			
+			          // open the browser and login as admin
 			driver.get(baseUrl);
 			loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");

@@ -52,13 +52,14 @@ public class RTTC023_Tax
   
   @BeforeMethod
   public void setUp() throws Exception {
+	               // launch browser and open admin URL
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		logoutPOM = new LogoutPOM(driver);
 		taxPOM = new AllSalesPOM(driver);
 		screenShot = new ScreenShot(driver);
 		baseUrl = properties.getProperty("baseURL");
-		// open the browser and login as admin
+		           // open the browser and login as admin
 		driver.get(baseUrl);
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");

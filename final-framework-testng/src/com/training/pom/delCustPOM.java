@@ -47,7 +47,7 @@ private WebDriver driver;
 		}
 	
 	public void clickChkBox() {
-		List<WebElement> allNames = this.custTable.findElements(By.tagName("tr"));
+		List<WebElement> allNames = this.custTable.findElements(By.tagName("tr"));  // identifying rows of Customers table.
 		System.out.println(allNames.get(2).getText());
 		WebElement namedel = allNames.get(2);
 		namedel.findElement(By.name("selected[]")).click();
@@ -57,10 +57,6 @@ private WebDriver driver;
 	public void clickDltBtn() {
 		this.dltbtn.click(); 
 	}
-	
-	/* public List<WebElement> CustNameCols() {
-		return this.custTable.findElements(By.tagName("td"));
-	}*/
 	
 	
 	public void handleAlert() {

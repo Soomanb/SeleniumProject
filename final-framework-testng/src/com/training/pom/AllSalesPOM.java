@@ -44,7 +44,7 @@ private WebDriver driver;
 	private WebElement filterbtn; 
 
 	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div/div[2]/div[2]")
-	private WebElement table; 
+	private WebElement table;                              // xpath for webtable forOrders, Tax, Shipping and Returns is same.
 	
 	public void clickReports() {
 		this.Reports.click();
