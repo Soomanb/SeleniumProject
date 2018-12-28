@@ -52,7 +52,7 @@ private WebDriver driver;
 
 	// locate webtable and xpath for webtable forOrders, Tax, Shipping and Returns is same.
 	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div/div[2]/div[2]")
-	private WebElement table;                              
+	private WebElement table;   
 	
 	public void clickReports() {
 		this.Reports.click();
