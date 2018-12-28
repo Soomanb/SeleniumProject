@@ -57,6 +57,7 @@ public class RTTC051Test
 	  // add new customer and enter details in General tab
 	  rttc051POM.ClickAddNew();
 	  rttc051POM.sendCustomerGeneraldetails("privileged customerSB","manzoor", "mehadi", "manzoorSB@gmail.com", "9876543210", "manzoor1");
+	  
 	  // go to Address tab and add details there
 	  rttc051POM.ClickOnAddressTab();
 	  rttc051POM.sendCustomerAddressdetails("yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");

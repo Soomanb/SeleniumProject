@@ -41,6 +41,8 @@ public class RTTC054Test
   @Test
   public void PlaceOrderByAdmin() throws InterruptedException 
   {
+	  
+	          // Admin places Order
 	  rttc054POM.clickSalesIcon();
 	  rttc054POM.clickOrdersLink();
 	  rttc054POM.clickToAddNewOrder();
@@ -51,6 +53,7 @@ public class RTTC054Test
 	  rttc054POM.sendShippingAndPaymentMethod("Cash On Delivery");
 	  rttc054POM.clickSaveButton();	    
 	  Thread.sleep(3000);
+	  
 	  actualResultmsg = rttc054POM.getConfirmationMsg();
 	  assertEquals(actualResultmsg, expectedResultmsg);
 	  screenShot.captureScreenShot();

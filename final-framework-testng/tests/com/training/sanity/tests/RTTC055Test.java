@@ -44,7 +44,7 @@ public class RTTC055Test
   {
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  
-	  // add new manufacturer
+	             // add new manufacturer
 	  rttc055POM.clickOnCatalogIcon();
 	  rttc055POM.clickOnManufacturersLink();
 	  rttc055POM.clickToAddNewManufacturer();
@@ -56,7 +56,7 @@ public class RTTC055Test
 	  System.out.println("Expected Result: " + expectedResultmsg1);
 	  System.out.println("Actual Result: " + actualResultmsg1);
 	  
-	  // add new product
+	                // add new product
 	  rttc055POM.addNewProduct();
 	  rttc055POM.enterInProductGeneralTab("Finger Ring", "Finger Ring for ladies");
 	  rttc055POM.enterInProductDataTab("SKU-012", "500", "50");
