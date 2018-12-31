@@ -49,10 +49,11 @@ private WebDriver driver;
 		}
 	
 	
-	public void clickOnRewardPointsReport( ) {
+	public void clickOnRewardPointsReport( ) throws InterruptedException {
 		driver.findElement(By.xpath("//*[@id=\"menu-report\"]/a/i")).click();  // click on Reports icon
 		driver.findElement(By.xpath("//*[@id=\"menu-report\"]/ul/li[3]/a")).click();	// click on Customers link	
 	driver.findElement(By.xpath("//*[@id=\"menu-report\"]/ul/li[3]/ul/li[5]/a")).click();  //click on Reward points link
+	Thread.sleep(3000);
 	}
 	
 	//verify the number of rows in the Reward points table

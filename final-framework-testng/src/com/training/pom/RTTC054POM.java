@@ -204,8 +204,9 @@ private WebDriver driver;
 							
 						}
 						
-						public void clickSaveButton() {
+						public void clickSaveButton() throws InterruptedException {
 							this.savebtn.click();
+							Thread.sleep(2000);
 						}
 						
 						public String getConfirmationMsg() {

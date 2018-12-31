@@ -1,3 +1,5 @@
+// To verify whether application allows admin to add reward points to the customer & view reward points in Reports section
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
@@ -20,6 +22,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -35,27 +38,28 @@ public class RTTC052Test
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private int actualResult;
-	private int expectedResult = 7;
+	private int expectedResult = 13;
 	
   @Test
   public void GiveRewardPointstoCustomer() throws InterruptedException
   {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // implicit wait
+	  
 	  // Customers link is accessed using RTTC051POM class
 	  rttc051POM.clickCustomerIcon();
 	  rttc051POM.clickCustomersLink();
 	  
 	  rttc052POM.ClickEditCustomer();  // click on edit button against a customer
-	  rttc052POM.ChangeFirstname("Asmita");  //modify first name
+	  rttc052POM.ChangeFirstname("Ashmita");  //modify first name
 	  rttc052POM.clickAddresstab();            // go to Address tab 
 	  rttc052POM.ChangeCustAddress("8796545");  // modify postcode
 	  rttc052POM.sendRewardPoints("review", "50"); // go to Reward points tab and enter description and points
 	  rttc051POM.ClickSave();                      // Save Button is again accessed using RTTC051POM class
 	  rttc052POM.clickOnRewardPointsReport();    // get Customer Reward points report
-	  Thread.sleep(3000);
 	  
 	  actualResult = rttc052POM.CheckRewardPointsRow();
 	  assertEquals((actualResult-1), expectedResult);  //actualresult-1 -> to exclude the heading row.
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("Numbers of customers rewarded with points is verified successfully.");
 	  System.out.println("Expected Result: " + expectedResult);
 	  System.out.println("Actual Result: " + (actualResult-1));
@@ -85,7 +89,7 @@ Thread.sleep(4000);
   @AfterMethod
   public void tearDown() throws Exception {
 		Thread.sleep(2000);
-		driver.quit();
+	//	driver.quit();
 	}
 
   @BeforeClass

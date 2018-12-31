@@ -1,3 +1,5 @@
+// To verify whether application allows admin to create a group & register new user to the group
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
@@ -19,6 +21,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -39,34 +42,34 @@ public class RTTC051Test
   @Test
   public void CreateNewCustGrp() throws InterruptedException 
   {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  // implicit wait
 	                // create new customer group
 	  rttc051POM.clickCustomerIcon();
 	  rttc051POM.clickCustomerGroupsLink();
 	  rttc051POM.ClickAddNew();
-	  rttc051POM.sendCustomerGrpName("privileged customerSB");
-	  rttc051POM.sendCustomerGrpDescription("privileged customerSB");
+	  rttc051POM.sendCustomerGrpName("privileged customerSB2");
+	  rttc051POM.sendCustomerGrpDescription("privileged customerSB2");
 	  rttc051POM.ApproveNewCust();
 	  rttc051POM.ClickSave();
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("New Customer Group created successfully.");
-	  Thread.sleep(5000);
+	  
 	                 // create new customer
 	  rttc051POM.clickCustomerIcon();
 	  rttc051POM.clickCustomersLink();
 	  
 	  // add new customer and enter details in General tab
 	  rttc051POM.ClickAddNew();
-	  rttc051POM.sendCustomerGeneraldetails("privileged customerSB","manzoor", "mehadi", "manzoorSB@gmail.com", "9876543210", "manzoor1");
+	  rttc051POM.sendCustomerGeneraldetails("privileged customerSB2","manzoorSB2", "mehadi", "manzoorSB2@gmail.com", "9876543210", "manzoor1");
 	  
 	  // go to Address tab and add details there
 	  rttc051POM.ClickOnAddressTab();
 	  rttc051POM.sendCustomerAddressdetails("yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");
 	  
 	  rttc051POM.ClickSave();
-	  Thread.sleep(3000);
 	  actualResult = rttc051POM.confirmationMsg();
 	  assertEquals(actualResult, expectedResult);  
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("New Customer created successfully.");
 	  System.out.println("Expected Result: " + expectedResult);
 	  System.out.println("Actual Result: " + actualResult);
@@ -94,7 +97,7 @@ Thread.sleep(5000);
   @AfterMethod
   public void tearDown() throws Exception {
 		Thread.sleep(2000);
-		driver.quit();
+		//driver.quit();
 	}
 
   @BeforeClass

@@ -1,3 +1,5 @@
+// To verify whether application allows admin to generate invoice & change Order Status to complete for the order
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
@@ -20,6 +22,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -40,19 +43,18 @@ public class RTTC053Test
   @Test
   public void AddHistoryToOrder() throws InterruptedException 
   {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);   // implicit wait
+	  
 	  rttc053POM.clickViewButtonforOrder();  // click View button from Latest Orders table.
 	  rttc053POM.clickGenerateIcon();  // click on Generate icon
-	  Thread.sleep(2000);
 	  System.out.println("Invoice Number is: " + rttc053POM.getInvoiceNumber());  // print the invoice number generated.
 	  screenShot.captureScreenShot();
 	  
 	  rttc053POM.selectOrderStatus("Complete"); // select "Complete" from Order status dropdown.
 	  rttc053POM.clickAddHistoryButton();
-      Thread.sleep(3000);
 	  actualResultmsg = rttc053POM.getSuccessMsg(); 
-	  Thread.sleep(2000);
 	  assertEquals(actualResultmsg, expectedResultmsg);
-	  screenShot.captureScreenShot();
+	//  screenShot.captureScreenShot();
 	  System.out.println("Status of Order added successfully.");
 	  System.out.println("Expected Result: " + expectedResultmsg);
 	  System.out.println("Actual Result: " + actualResultmsg);
@@ -80,7 +82,7 @@ Thread.sleep(4000);
   @AfterMethod
   public void tearDown() throws Exception {
 		Thread.sleep(2000);
-		driver.quit();
+		//driver.quit();
 	}
 
   @BeforeClass

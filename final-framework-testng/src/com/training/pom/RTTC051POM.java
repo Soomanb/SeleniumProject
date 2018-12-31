@@ -82,8 +82,9 @@ private WebDriver driver;
 			this.custgrpapprv.get(0).click();
 	}
 	
-	public void ClickSave() {
+	public void ClickSave() throws InterruptedException {
 		this.savebtn.click();
+		Thread.sleep(3000);
     }
 	
 	// enter details of Customer in General tab

@@ -1,3 +1,5 @@
+// To verify whether application allows admin to create manufacturer details & add product based on the created manufacturer
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
@@ -42,7 +44,7 @@ public class RTTC055Test
   @Test
   public void CreateNewProduct()
   {
-	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  // implicit wait
 	  
 	             // add new manufacturer
 	  rttc055POM.clickOnCatalogIcon();
@@ -51,7 +53,7 @@ public class RTTC055Test
 	  rttc055POM.sendNewManufacturerName("manzoor");
 	  actualResultmsg1 = rttc055POM.getSuccessMsg();
 	  assertEquals(actualResultmsg1, expectedResultmsg1);
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("Manufacturer added successfully.");
 	  System.out.println("Expected Result: " + expectedResultmsg1);
 	  System.out.println("Actual Result: " + actualResultmsg1);
@@ -64,7 +66,7 @@ public class RTTC055Test
 	  rttc055POM.ClickSave();
 	  actualResultmsg2 = rttc055POM.getSuccessMsg();
 	  assertEquals(actualResultmsg2, expectedResultmsg2);
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("Product added successfully.");
 	  System.out.println("Expected Result: " + expectedResultmsg2);
 	  System.out.println("Actual Result: " + actualResultmsg2);
@@ -94,7 +96,7 @@ Thread.sleep(4000);
   @AfterMethod
   public void tearDown() throws Exception {
 		Thread.sleep(2000);
-		driver.quit();
+		//driver.quit();
 	}
 
   @BeforeClass

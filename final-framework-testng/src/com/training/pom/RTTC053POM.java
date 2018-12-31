@@ -41,8 +41,9 @@ private WebDriver driver;
 		this.viewbtn.click();  // click on View Button of the order to be viewed.
 	}
 	
-	public void clickGenerateIcon() {
+	public void clickGenerateIcon() throws InterruptedException {
 		this.generateicon.click();  // click on Generate icon to generate Invoice number.
+		Thread.sleep(2000);
 	}
 	
 	public String getInvoiceNumber() {
@@ -54,8 +55,9 @@ private WebDriver driver;
 		OrdSts.selectByVisibleText(status);   // select from Order Status dropdown depending on VisibleText input 
 	}
 	
-	public void clickAddHistoryButton() {
+	public void clickAddHistoryButton() throws InterruptedException {
 		this.addhistorybtn.click();  // click Add History Button
+		Thread.sleep(5000);
 	}
 	
 	public String getSuccessMsg() {

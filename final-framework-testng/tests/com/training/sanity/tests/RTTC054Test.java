@@ -1,3 +1,5 @@
+// To verify whether application allows admin to place an order for customer
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
@@ -17,6 +19,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -43,20 +46,22 @@ public class RTTC054Test
   {
 	  
 	          // Admin places Order
+	  
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // implicit wait
+	  
 	  rttc054POM.clickSalesIcon();
 	  rttc054POM.clickOrdersLink();
 	  rttc054POM.clickToAddNewOrder();
-	  rttc054POM.sendCustomerDetailsAndClickContinue("manzoor", "mehadi", "manzoor@gmail.com", "9876543210");
+	  rttc054POM.sendCustomerDetailsAndClickContinue("manzoor4", "mehadi", "manzoor4@gmail.com", "9876543211");
 	  rttc054POM.sendProductDetailsAndClickContinue("Nullam sodales in purus vel auctor");
-	  rttc054POM.sendPaymentDetailsAndClickContinue("manzoor", "mehadi", "yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");
-	  rttc054POM.sendShippingDetailsAndClickContinue("manzoor", "mehadi", "yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");
+	  rttc054POM.sendPaymentDetailsAndClickContinue("manzoor4", "mehadi", "yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");
+	  rttc054POM.sendShippingDetailsAndClickContinue("manzoor2", "mehadi", "yeshwanthapur", "bangalore", "bangalore", "560022", "India", "Karnataka");
 	  rttc054POM.sendShippingAndPaymentMethod("Cash On Delivery");
 	  rttc054POM.clickSaveButton();	    
-	  Thread.sleep(3000);
-	  
+	  	  
 	  actualResultmsg = rttc054POM.getConfirmationMsg();
 	  assertEquals(actualResultmsg, expectedResultmsg);
-	  screenShot.captureScreenShot();
+	 // screenShot.captureScreenShot();
 	  System.out.println("Order placed by Admin successfully.");
 	  System.out.println("Expected Result: " + expectedResultmsg);
 	  System.out.println("Actual Result: " + actualResultmsg);
@@ -84,7 +89,7 @@ Thread.sleep(4000);
   @AfterMethod
   public void tearDown() throws Exception {
 		Thread.sleep(2000);
-		driver.quit();
+		// driver.quit();
 	}
 
   @BeforeClass
