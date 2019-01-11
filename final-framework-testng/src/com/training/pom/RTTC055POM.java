@@ -107,6 +107,13 @@ private WebDriver driver;
 			this.linkscateg.sendKeys(Categories);
 		}
 		
+		public void enterCategoryInProductLinksTab(String category) {
+			this.linkstab.click();
+			this.linkscateg.click();
+			this.linkscateg.sendKeys(category);
+			driver.findElement(By.linkText(category)).click();
+		}
+		
 		public void ClickSave() {
 			this.savebtn.click();
 		}

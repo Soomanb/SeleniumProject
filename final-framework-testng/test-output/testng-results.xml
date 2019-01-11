@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36043" started-at="2018-12-31T11:56:47Z" finished-at="2018-12-31T11:57:23Z">
+  <suite name="Default suite" duration-ms="111387" started-at="2019-01-10T13:17:22Z" finished-at="2019-01-10T13:19:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36043" started-at="2018-12-31T11:56:47Z" finished-at="2018-12-31T11:57:23Z">
-      <class name="com.training.sanity.tests.RTTC052Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC052Test@27efef64]" name="setUpBeforeClass" is-config="true" duration-ms="30" started-at="2018-12-31T11:56:47Z" finished-at="2018-12-31T11:56:47Z">
+    <test name="Default test" duration-ms="111387" started-at="2019-01-10T13:17:22Z" finished-at="2019-01-10T13:19:13Z">
+      <class name="com.training.sanity.tests.RTTC084Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="setUpBeforeClass" is-config="true" duration-ms="38" started-at="2019-01-10T13:17:22Z" finished-at="2019-01-10T13:17:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC052Test@27efef64]" name="setUp" is-config="true" duration-ms="15153" started-at="2018-12-31T11:56:47Z" finished-at="2018-12-31T11:57:02Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="setUp" is-config="true" duration-ms="20484" started-at="2019-01-10T13:17:22Z" finished-at="2019-01-10T13:17:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="GiveRewardPointstoCustomer()[pri:0, instance:com.training.sanity.tests.RTTC052Test@27efef64]" name="GiveRewardPointstoCustomer" duration-ms="18807" started-at="2018-12-31T11:57:02Z" finished-at="2018-12-31T11:57:21Z">
+        <test-method status="PASS" signature="CreateProductInAdmin()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="CreateProductInAdmin" duration-ms="39013" started-at="2019-01-10T13:17:42Z" finished-at="2019-01-10T13:18:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GiveRewardPointstoCustomer -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC052Test@27efef64]" name="tearDown" is-config="true" duration-ms="2008" started-at="2018-12-31T11:57:21Z" finished-at="2018-12-31T11:57:23Z">
+        </test-method> <!-- CreateProductInAdmin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="tearDown" is-config="true" duration-ms="2006" started-at="2019-01-10T13:18:21Z" finished-at="2019-01-10T13:18:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.RTTC052Test -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="setUp" is-config="true" duration-ms="8084" started-at="2019-01-10T13:18:23Z" finished-at="2019-01-10T13:18:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyProductInUserApp()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="VerifyProductInUserApp" duration-ms="39681" started-at="2019-01-10T13:18:32Z" depends-on-methods="com.training.sanity.tests.RTTC084Test.CreateProductInAdmin" finished-at="2019-01-10T13:19:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductInUserApp -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC084Test@27efef64]" name="tearDown" is-config="true" duration-ms="2001" started-at="2019-01-10T13:19:11Z" finished-at="2019-01-10T13:19:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.RTTC084Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

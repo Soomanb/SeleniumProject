@@ -34,9 +34,10 @@ public class ApachePOIExcelRead {
 
 			// Get first/desired sheet from the workbook
 			XSSFSheet sheet = workbook.getSheetAt(0);
-
+			
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
+			
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
 				// For each row, iterate through all the columns
@@ -55,6 +56,10 @@ public class ApachePOIExcelRead {
 					case Cell.CELL_TYPE_STRING:
 						tempList.add(cell.getStringCellValue());
 						break;
+					case Cell.CELL_TYPE_BLANK:
+						tempList.add("");
+						break;	
+						
 					}
 
 				}

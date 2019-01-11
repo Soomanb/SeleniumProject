@@ -37,8 +37,9 @@ public class RTTC052Test
 	private RTTC052POM rttc052POM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private int actualResult;
-	private int expectedResult = 13;
+	private String actualResultmsg;
+	private String expectedResultmsg = "Success: You have modified customers!\n" + 
+			"×";
 	
   @Test
   public void GiveRewardPointstoCustomer() throws InterruptedException
@@ -50,19 +51,18 @@ public class RTTC052Test
 	  rttc051POM.clickCustomersLink();
 	  
 	  rttc052POM.ClickEditCustomer();  // click on edit button against a customer
-	  rttc052POM.ChangeFirstname("Ashmita");  //modify first name
+	  rttc052POM.ChangeFirstname("Ashimita");  //modify first name
 	  rttc052POM.clickAddresstab();            // go to Address tab 
-	  rttc052POM.ChangeCustAddress("8796545");  // modify postcode
-	  rttc052POM.sendRewardPoints("review", "50"); // go to Reward points tab and enter description and points
+	  rttc052POM.ChangeCustAddress("8789545");  // modify postcode
+	  rttc052POM.sendRewardPoints("reviewing", "60"); // go to Reward points tab and enter description and points
 	  rttc051POM.ClickSave();                      // Save Button is again accessed using RTTC051POM class
-	  rttc052POM.clickOnRewardPointsReport();    // get Customer Reward points report
+	  actualResultmsg = rttc052POM.getSuccessMsg();
+	 
+	  assertEquals(actualResultmsg, expectedResultmsg);
 	  
-	  actualResult = rttc052POM.CheckRewardPointsRow();
-	  assertEquals((actualResult-1), expectedResult);  //actualresult-1 -> to exclude the heading row.
+	  rttc052POM.clickOnRewardPointsReport();    // get Customer Reward points report   
 	 // screenShot.captureScreenShot();
 	  System.out.println("Numbers of customers rewarded with points is verified successfully.");
-	  System.out.println("Expected Result: " + expectedResult);
-	  System.out.println("Actual Result: " + (actualResult-1));
 	  logoutPOM.clickLogoutBtn();
   }
   

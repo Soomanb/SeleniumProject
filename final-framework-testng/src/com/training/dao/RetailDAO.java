@@ -8,14 +8,15 @@ import java.util.List;
 import java.util.Properties;
 
 import com.training.bean.LoginBean;
+import com.training.bean.UserBean;
 import com.training.connection.GetConnection;
 import com.training.utility.LoadDBDetails;
 
-public class ELearningDAO {
+public class RetailDAO {
 	
 	Properties properties; 
 	
-	public ELearningDAO() {
+	public RetailDAO() {
 		 try {
 			properties = new Properties();
 			FileInputStream inStream = new FileInputStream("./resources/sql.properties");
@@ -53,8 +54,56 @@ public class ELearningDAO {
 		return list; 
 	}
 	
+	public List<UserBean> getUsers(){
+		String sql = properties.getProperty("get.users"); 
+		
+		GetConnection gc  = new GetConnection(); 
+		List<UserBean> list = null;
+		try {
+			gc.ps1 = GetConnection.getMySqlConnection(LoadDBDetails.getDBDetails()).prepareStatement(sql); 
+			list = new ArrayList<UserBean>(); 
+			
+			gc.rs1 = gc.ps1.executeQuery(); 
+			
+			while(gc.rs1.next()) {
+			
+				UserBean temp = new UserBean(); 
+				temp.setOrderID(gc.rs1.getString(1));
+				temp.setCustomer(gc.rs1.getString(2));
+				temp.setFirstName(gc.rs1.getString(3));
+				temp.setLastName(gc.rs1.getString(4));
+				temp.setEmailID(gc.rs1.getString(5));
+				temp.setPhone(gc.rs1.getString(6));
+				temp.setProduct(gc.rs1.getString(7));
+				temp.setModel(gc.rs1.getString(8));
+
+				list.add(temp); 
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list; 
+		
+	}
+	
+	// to convert the List to String format
+	public String ListToStringUsers() {
+		String listString = "";
+
+		for (UserBean s : this.getUsers())
+		{
+		    listString += s;
+		}
+		return listString;
+	}
+	
+	
 	public static void main(String[] args) {
-		new ELearningDAO().getLogins().forEach(System.out :: println);
+		new RetailDAO().getLogins().forEach(System.out :: println);
+		new RetailDAO().getUsers().forEach(System.out :: println);
+		
 	}
 	
 	

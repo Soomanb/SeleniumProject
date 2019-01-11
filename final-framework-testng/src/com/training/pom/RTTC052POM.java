@@ -22,6 +22,9 @@ private WebDriver driver;
 	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div/div[2]/div[2]")
 	private WebElement table;  
 	
+	@FindBy(xpath="//*[@id=\"content\"]/div[2]/div[1]")
+	private WebElement successmsg;  // locate the message displayed after modifying customer
+	
 	// click on the edit button against a specific customer
 	public void ClickEditCustomer() {
       driver.findElement(By.xpath("//*[@id=\"form-customer\"]/div/table/tbody/tr[12]/td[8]/a/i")).click();
@@ -47,6 +50,10 @@ private WebDriver driver;
 		driver.findElement(By.id("input-points")).sendKeys(points);   // enter reward points to be given to the customer
 		driver.findElement(By.id("button-reward")).click();  // click Add Reward Points
 		}
+	
+	public String getSuccessMsg() {
+		return this.successmsg.getText();  // get text of the success message displayed.
+	}
 	
 	
 	public void clickOnRewardPointsReport( ) throws InterruptedException {
