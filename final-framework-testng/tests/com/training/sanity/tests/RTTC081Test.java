@@ -1,3 +1,6 @@
+/* To verify whether application allows admin to return product of customer & delete from return list 
+& same get displayed in DataBase  */
+
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;

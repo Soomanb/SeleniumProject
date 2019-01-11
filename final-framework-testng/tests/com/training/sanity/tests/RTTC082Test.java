@@ -1,3 +1,5 @@
+//To verify whether application allows admin to return multiple product of customer & delete from return list
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;

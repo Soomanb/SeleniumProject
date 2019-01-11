@@ -1,3 +1,5 @@
+//To verify whether application displays error message upon entering invalid details while returning product
+
 package com.training.sanity.tests;
 
 import org.testng.annotations.Test;

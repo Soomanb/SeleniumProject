@@ -1,3 +1,5 @@
+//To Verify whether added product details get displayed in User Application home screen
+
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
